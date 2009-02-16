@@ -1,0 +1,22 @@
+Source: openbve-data
+Section: games
+Priority: optional
+Maintainer: Paul Sladen <ubuntu@paul.sladen.org>
+Build-Depends: debhelper
+Build-Depends-Indep: 
+Standards-Version: 3.8.0
+
+Package: openbve-data
+Architecture: all
+Depends: ${cli:Depends}
+Description: OpenBVE rail simulator, data used by 'openbve'
+ OpenBVE is a public domain railway/train simulator backwards
+ compatible with existing 'BVE Trainsim' train and route
+ datafiles.
+ .
+ This package contains the icons, keyboard settings, images
+ and bootstrap parameters not distributed in the openbve
+ source distribution.
+ . 
+ http://openbve.uuuq.com/
+

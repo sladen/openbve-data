@@ -1,0 +1,13 @@
+usr/share/doc/openbve-data/
+usr/lib/openbve/
+usr/lib/openbve/Interface/
+usr/lib/openbve/Controls/
+usr/lib/openbve/Graphics/
+usr/lib/openbve/Compatibility/
+usr/lib/openbve/Compatibility/limits
+usr/lib/openbve/Compatibility/limits/graphics
+usr/lib/openbve/Compatibility/pretrain
+usr/lib/openbve/Compatibility/transponder
+usr/lib/openbve/Compatibility/poles
+usr/lib/openbve/Compatibility/signals
+usr/lib/openbve/Compatibility/signals/graphics
