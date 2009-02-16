@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 export DH_VERBOSE=15
-TARGET = debian/openbve-data
+TARGET = $(CURDIR)/debian/tmp
 
 configure: configure-stamp
 configure-stamp:
@@ -10,8 +10,6 @@ configure-stamp:
 build: build-stamp
 build-stamp: configure-stamp 
 	dh_testdir
-	mkdir -p $(TARGET)/usr/lib/openbve/
-	cp -a $(CURDIR)/Interface $(CURDIR)/Controls $(CURDIR)/Graphics $(CURDIR)/Compatibility $(TARGET)/usr/lib/openbve/
 	touch build-stamp
 
 clean:
@@ -26,6 +24,7 @@ install: build
 	dh_testroot
 	dh_clean -k 
 	dh_installdirs
+	cp -rpv $(CURDIR)/Interface $(CURDIR)/Controls $(CURDIR)/Graphics $(CURDIR)/Compatibility $(TARGET)/usr/lib/openbve/
 
 binary-arch:
 	# Do nothing
