@@ -9,6 +9,7 @@ Standards-Version: 3.8.0
 Package: openbve-data
 Architecture: all
 Depends: ${cli:Depends}
+Recommends: openbve-data-icons
 Description: OpenBVE rail simulator, data used by 'openbve'
  OpenBVE is a public domain railway/train simulator backwards
  compatible with existing 'BVE Trainsim' train and route
