@@ -24,7 +24,7 @@ install: build
 	dh_testroot
 	dh_clean -k 
 	dh_installdirs
-	cp -rpv $(CURDIR)/Interface $(CURDIR)/Controls $(CURDIR)/Graphics $(CURDIR)/Compatibility $(TARGET)/usr/lib/openbve/
+	cp -rp $(CURDIR)/Interface $(CURDIR)/Controls $(CURDIR)/Graphics $(CURDIR)/Compatibility $(TARGET)/usr/lib/openbve/
 	(cd $(TARGET)/usr/share/pixmaps/ && ln -s ../../lib/openbve/Interface/logo.png openbve.png)
 
 binary-arch:
