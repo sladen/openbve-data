@@ -6,6 +6,7 @@ Build-Depends: debhelper (>= 5)
 Vcs-Browser: http://github.com/sladen/openbve-data/tree/debian
 Vcs-Git: http://github.com/sladen/openbve-data.git
 Standards-Version: 3.8.0
+Homepage: http://openbve.uuuq.com/
 
 Package: openbve-data
 Architecture: all
