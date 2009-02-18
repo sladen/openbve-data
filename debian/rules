@@ -26,6 +26,10 @@ install: build
 	dh_installdirs
 	cp -rp $(CURDIR)/Interface $(CURDIR)/Controls $(CURDIR)/Graphics $(CURDIR)/Compatibility $(TARGET)/usr/share/games/openbve/data/
 	(cd $(TARGET)/usr/share/pixmaps/ && ln -s ../../lib/openbve/Interface/logo.png openbve.128.png)
+	# Symlink in our data to where the .exe is going to look for it (it searches current_exepath/Foo/)
+	for datadir in Compatibility Controls Graphics Interface ; do \
+	  (cd $(TARGET)/usr/lib/openbve/ && ln -s ../../share/games/openbve/data/$$datadir ); \
+	done
 
 binary-arch:
 	# Do nothing
