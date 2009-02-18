@@ -3,6 +3,8 @@ Section: games
 Priority: optional
 Maintainer: Paul Sladen <ubuntu@paul.sladen.org>
 Build-Depends: debhelper (>= 5)
+Vcs-Browser: http://github.com/sladen/openbve-data/tree/debian
+Vcs-Git: http://github.com/sladen/openbve-data.git
 Standards-Version: 3.8.0
 
 Package: openbve-data
