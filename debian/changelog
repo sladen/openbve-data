@@ -1,4 +1,4 @@
-openbve-data (0.9.5.5-0ubuntu1) jaunty; urgency=low
+openbve-data (0.9.5.5-0ubuntu1) unreleased; urgency=low
 
   * Initial release (LP: #331188)
   * New upstream release 0.9.5.5, dated 20090217-2228
