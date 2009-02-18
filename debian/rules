@@ -25,8 +25,7 @@ install: build
 	dh_clean -k 
 	dh_installdirs
 	cp -rp $(CURDIR)/Interface $(CURDIR)/Controls $(CURDIR)/Graphics $(CURDIR)/Compatibility $(TARGET)/usr/share/games/openbve/data/
-	(cd $(TARGET)/usr/share/pixmaps/ && ln -s ../../lib/openbve/Interface/logo.png openbve.png)
-	cp -p $(CURDIR)/debian/openbve-data.lintian $(TARGET)/usr/share/lintian/overrides/openbve-data
+	(cd $(TARGET)/usr/share/pixmaps/ && ln -s ../../lib/openbve/Interface/logo.png openbve.128.png)
 
 binary-arch:
 	# Do nothing
@@ -37,6 +36,7 @@ binary-indep: build install
 	dh_install
 	dh_installchangelogs
 	dh_installdocs
+	dh_compress
 	dh_fixperms
 	dh_installdeb
 	dh_gencontrol
