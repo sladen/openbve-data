@@ -1,6 +1,8 @@
 #!/usr/bin/make -f
 export DH_VERBOSE=15
 TARGET = $(CURDIR)/debian/openbve-data
+DATATARGET=$(TARGET)/usr/share/games/openbve/data
+LANGUAGETARGET = $(DATATARGET)/Interface
 
 configure: configure-stamp
 configure-stamp:
@@ -24,12 +26,19 @@ install: build
 	dh_testroot
 	dh_clean -k 
 	dh_installdirs
-	cp -rp $(CURDIR)/Interface $(CURDIR)/Controls $(CURDIR)/Graphics $(CURDIR)/Compatibility $(TARGET)/usr/share/games/openbve/data/
+	cp -rp $(CURDIR)/Interface $(CURDIR)/Controls $(CURDIR)/Graphics $(CURDIR)/Compatibility $(DATATARGET)/
 	(cd $(TARGET)/usr/share/pixmaps/ && ln -s ../../lib/openbve/Interface/logo.png openbve.128.png)
 	# Symlink in our data to where the .exe is going to look for it (it searches current_exepath/Foo/)
 	for datadir in Compatibility Controls Graphics Interface ; do \
 	  (cd $(TARGET)/usr/lib/openbve/ && ln -s ../../share/games/openbve/data/$$datadir ); \
 	done
+
+	# Rename languages from ISO 639 to ISO 3166 for automatic selection from locale
+	(cd $(LANGUAGETARGET) && mv language_gsw.cfg   language_de-CH.cfg && mv flag_gsw.png   flag_de-CH.png)
+	(cd $(LANGUAGETARGET) && mv flag_zh_cn.png flag_zh-CN.png)
+	(cd $(LANGUAGETARGET) && mv flag_zh_sg.png flag_zh-SG.png)
+	(cd $(LANGUAGETARGET) && mv language_zh_hk.cfg language_zh-HK.cfg && mv flag_zh_hk.png flag_zh-HK.png)
+	(cd $(LANGUAGETARGET) && mv language_zh_tw.cfg language_zh-TW.cfg && mv flag_zh_tw.png flag_zh-TW.png)
 
 binary-arch:
 	# Do nothing

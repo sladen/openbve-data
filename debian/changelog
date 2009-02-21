@@ -1,6 +1,7 @@
 openbve-data (0.9.5.5+dfsg-0ubuntu3) unreleased; urgency=low
 
-      
+  * Rename Swiss-German and zh_* from ISO 639 to ISO 3166
+
  -- Paul Sladen <ubuntu@paul.sladen.org>  Thu, 21 Feb 2009 11:43:42 +0000
 
 openbve-data (0.9.5.5+dfsg-0ubuntu2) jaunty; urgency=low
