@@ -1,7 +1,8 @@
 openbve-data (0.9.6.0+dfsg-0ubuntu1) unreleased; urgency=low
 
   * New upstream release 0.9.6.0 (2009-03-16)
-	
+  * debian/rules: downsize now various changes have gone upstream
+
  -- Paul Sladen <ubuntu@paul.sladen.org>  Thu, 19 Feb 2009 23:00:10 +0000
 
 openbve-data (0.9.5.5+dfsg-0ubuntu3) jaunty; urgency=low
