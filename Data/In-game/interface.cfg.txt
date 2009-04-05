@@ -29,6 +29,7 @@ value = VALUE
 transition = TRANSITION
 transitionvector = X, Y
 
+
 parameters
 ----------
 SUBJECT: see below
@@ -79,3 +80,7 @@ Overwrite TEXT and use TRANSITION.
 
 NULL:
 No special meaning. Displays the element as-is.
+
+-----
+
+In order to create a custom interface, create a new folder with an interface.cfg file inside it and edit [interface] section inside the options.cfg file accordingly in order to load the interface.
