@@ -1,0 +1,42 @@
+openbve-data (1.0.2.0+dfsg-0ubuntu1) unreleased; urgency=low
+
+  * New upstream release 1.0.2.0 (2009-04-05)
+
+ -- Paul Sladen <ubuntu@paul.sladen.org>  Sun, 05 Apr 2009 13:04:11 +0000
+
+openbve-data (0.9.6.0+dfsg-0ubuntu1) unreleased; urgency=low
+
+  * New upstream release 0.9.6.0 (2009-03-16)
+  * debian/rules: downsize now various changes have gone upstream
+
+ -- Paul Sladen <ubuntu@paul.sladen.org>  Thu, 19 Feb 2009 23:00:10 +0000
+
+openbve-data (0.9.5.5+dfsg-0ubuntu3) jaunty; urgency=low
+
+  * Rename Swiss-German and zh_* from ISO 639 to ISO 3166
+    to allow better auto loading of translations from LANG/CultureInfo
+
+ -- Paul Sladen <ubuntu@paul.sladen.org>  Thu, 22 Feb 2009 23:03:42 +0000
+
+openbve-data (0.9.5.5+dfsg-0ubuntu2) jaunty; urgency=low
+
+  * DFSG sanitise upstream tarball only;
+    - Remove included .exe and .dll distributed by upstream but not used
+      (Source for each is provided by the main 'openbve' package itself)
+  * Initial release (LP: #331188)
+       
+ -- Paul Sladen <ubuntu@paul.sladen.org>  Thu, 19 Feb 2009 15:08:23 +0000
+
+openbve-data (0.9.5.5-0ubuntu1) jaunty; urgency=low
+
+  * Initial release (LP: #331188)
+  * New upstream release 0.9.5.5, dated 20090217-2228
+	
+ -- Paul Sladen <ubuntu@paul.sladen.org>  Fri, 18 Feb 2009 23:42:48 +0200
+
+openbve-data (0.9.5.0-0ubuntu1) unreleased; urgency=low
+
+  * import 0.9.5.0, dated 20090201-1953
+  * Debianise
+
+ -- Paul Sladen <ubuntu@paul.sladen.org>  Fri, 16 Feb 2009 05:54:30 +0100

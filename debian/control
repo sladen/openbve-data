@@ -1,0 +1,25 @@
+Source: openbve-data
+Section: games
+Priority: optional
+Maintainer: Paul Sladen <ubuntu@paul.sladen.org>
+Build-Depends: debhelper (>= 5)
+Vcs-Browser: http://github.com/sladen/openbve-data/tree/debian
+Vcs-Git: http://github.com/sladen/openbve-data.git
+Standards-Version: 3.8.0
+Homepage: http://openbve.uuuq.com/
+
+Package: openbve-data
+Architecture: all
+Depends: ${cli:Depends}
+Recommends: openbve-data-icons
+Description: realistic 3D train/railway simulator (GUI icons and data)
+ OpenBVE is a public domain railway/train simulator backwards
+ compatible with existing 'BVE Trainsim' train and route
+ datafiles.
+ .
+ This package contains the icons, keyboard settings, images
+ and bootstrap parameters not distributed in the openbve
+ source distribution.
+ . 
+ http://openbve.uuuq.com/
+
