@@ -11,7 +11,6 @@ Homepage: http://openbve.uuuq.com/
 Package: openbve-data
 Architecture: all
 Depends: ${cli:Depends}
-Recommends: openbve-data-icons
 Description: realistic 3D train/railway simulator (GUI icons and data)
  OpenBVE is a public domain railway/train simulator backwards
  compatible with existing 'BVE Trainsim' train and route
