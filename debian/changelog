@@ -1,6 +1,6 @@
 openbve-data (1.0.2.0+dfsg-0ubuntu1) unreleased; urgency=low
 
-  * New upstream release 1.0.2.0 (2009-04-05)
+  * New upstream release 1.0.2.0 (2009-04-05) (LP: #356344)
   * Rename 'en-UK.cfg'->'en-GB.cfg'; and 'UK.png'->'GB.png'
   * Remove Recommends: openbve-data-icons; equivalents are now shipped upstream
 
