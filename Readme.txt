@@ -9,20 +9,18 @@ Getting started
 
 If you have problems starting openBVE, make sure that you have read the "Getting started" articles on the official homepage located at:
 
-http://openbve.uuuq.com/en/use/index.html
+http://openbve.trainsimcentral.co.uk/en/use/index.html
 
 These pages also include driving guides and an overview on the default keyboard assignment.
 
 
------------------------------
-OpenBve.exe vs. OpenBve64.exe
------------------------------
+---------------------------------
+OpenBve.exe vs. OpenBveAnyCpu.exe
+---------------------------------
 
-First of all, users running on a 32-bit architecture should execute OpenBve.exe. For users running on a 64-bit machine, these are the differences:
+OpenBve.exe forcibly runs in 32-bit mode even on 64-bit (x64)processors. You should execute this file if you have a 32-bit (x86) processor, or if you have a 64-bit (x64) processor, but the dependencies (Tao, OpenAL, SDL) are only available in 32-bit form.
 
-OpenBve.exe executes as 32-bit. You have to use this file if the dependencies are only available in 32-bit. If the dependencies are 64-bit, you cannot use OpenBve.exe.
-
-OpenBve64.exe on the other hand executes as 64-bit. You need 64-bit versions of the dependencies as well. Train plugins are not currently supported by OpenBve64.exe (not on operating systems other than Windows anyway).
+OpenBveAnyCpu.exe runs in the native mode the processor and operating system support, e.g. in 32-bit on an x86 processor, and in 64-bit on an x64 processor. You are required to have the matching depencendies (Tao, OpenAL, SDL) in order to execute this file.
 
 
 ----------------------
@@ -44,12 +42,12 @@ Links
 -----
 
 Official homepage:
-http://openbve.uuuq.com/
+http://openbve.trainsimcentral.co.uk/
 
 Official discussion forum:
 http://openbve.freeforums.net/
 
-Please note that support is only offered for distributions that were downloaded from the official homepage, and only for the latest versions from either the stable or the development branches available there.
+Please note that support is only offered for distributions that were downloaded from the official homepage, and only for the latest versions available there.
 
 
 ------------------------
