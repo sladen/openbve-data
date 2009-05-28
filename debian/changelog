@@ -1,3 +1,9 @@
+openbve-data (1.0.6.0+dfsg-0ubuntu1) unreleased; urgency=low
+
+  * New upstream release 1.0.6.0 (2009-05-24)
+	
+ -- Paul Sladen <ubuntu@paul.sladen.org>  Thu, 28 May 2009 18:32:03 +0000
+
 openbve-data (1.0.2.0+dfsg-0ubuntu1) jaunty; urgency=low
 
   * New upstream release 1.0.2.0 (2009-04-05) (LP: #356344)
