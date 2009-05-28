@@ -1,7 +1,6 @@
-﻿; Controls
-; ========
-; This file was automatically generated.
-; Please do not modify directly.
+﻿; Current control configuration
+; =============================
+; This file was automatically generated. Please modify only if you know what you're doing.
 
 POWER_INCREASE, keyboard, 122, 0
 POWER_DECREASE, keyboard, 97, 0
@@ -70,11 +69,13 @@ MENU_ENTER, keyboard, 13, 0
 MENU_BACK, keyboard, 27, 0
 MISC_CLOCK, keyboard, 99, 2
 MISC_SPEED, keyboard, 118, 2
+MISC_TIMEFACTOR, keyboard, 106, 2
 MISC_FPS, keyboard, 120, 2
 MISC_AI, keyboard, 97, 2
 MISC_PAUSE, keyboard, 19, 0
 MISC_QUIT, keyboard, 113, 2
 MISC_FULLSCREEN, keyboard, 102, 2
+MISC_MUTE, keyboard, 109, 2
 MISC_INTERFACE, keyboard, 291, 0
 MISC_BACKFACE, keyboard, 292, 0
 MISC_CPUMODE, keyboard, 293, 0
