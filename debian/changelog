@@ -1,10 +1,10 @@
-openbve-data (1.0.7.2+dfsg-0ubuntu1) unreleased; urgency=low
+openbve-data (1.0.7.2+dfsg-0ubuntu1) karmic; urgency=low
 
   * New upstream release 1.0.7.2 (2009-06-17)
   * Expand debian/copyright based on feedback for acceptance into Debian
   * debian/control: Update homepage
 
- -- Paul Sladen <ubuntu@paul.sladen.org>  Fri, 26 Jun 2009 11:51:00 +0000
+ -- Paul Sladen <ubuntu@paul.sladen.org>  Fri, 26 Jun 2009 12:18:00 +0000
 
 openbve-data (1.0.6.2+dfsg-0ubuntu1) unreleased; urgency=low
 
