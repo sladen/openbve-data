@@ -54,4 +54,4 @@ Please note that support is only offered for distributions that were downloaded 
 Dedication to the public
 ------------------------
 
-This program, along with all documentation provided, is dedicated to the public. I do not pose any restrictions on how this material can be used, and explicitly encourage redistribution and modification for any purpose.
+This program is dedicated to the public. I do not pose any restrictions or requirements on how this material can be used, and explicitly encourage redistribution and modification for any purpose.
