@@ -1,9 +1,9 @@
-openbve-data (1.2.0.3+dfsg-0ubuntu1) unreleased; urgency=low
+openbve-data (1.2.0.3+dfsg-0ubuntu1) karmic; urgency=low
 
   * New upstream stable release 1.2.0.3 (2009-08-04)
   * debian/copyright: update to reflect minor wording changes
 
- -- Paul Sladen <ubuntu@paul.sladen.org>  Sun, 26 Jul 2009 10:51:00 +0000
+ -- Paul Sladen <ubuntu@paul.sladen.org>  Thu,  6 Aug 2009 01:45:00 +0100
 
 openbve-data (1.1.1.0+dfsg-0ubuntu1) unreleased; urgency=low
 
