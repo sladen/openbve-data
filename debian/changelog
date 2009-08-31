@@ -1,5 +1,6 @@
 openbve-data (1.2.1.3+dfsg-0ubuntu1) unreleased; urgency=low
 
+  * New upstream stable release 1.2.1.3 (2009-08-31)
 
  -- Paul Sladen <ubuntu@paul.sladen.org>  Tue,  1 Sep 2009 00:07:00 +0100
 
