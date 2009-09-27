@@ -28,7 +28,7 @@ Command line arguments
 ----------------------
 
 /route=FILE
-Loads the specified route (CSV, RW) on startup. If /train is not also specified, the default train of the route will be used if one is found, otherwise the main menu opens with just the route selected.
+Loads the specified route (CSV/RW) on startup. If /train is not also specified, the default train of the route will be used if one is found, otherwise the main menu opens with just the route selected.
 
 /train=FOLDER
 Loads the specified train folder (containing a train.dat) on startup. If /route is not also specified, the main menu will be opened with just the train selected.
