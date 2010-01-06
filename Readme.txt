@@ -45,7 +45,7 @@ Official homepage:
 http://openbve.trainsimcentral.co.uk/
 
 Official discussion board:
-http://openbve.freeforums.net/
+http://openbve.freeforums.org/
 
 Please note that support is only offered for distributions that were downloaded from the official homepage, and only for the latest versions available there.
 
