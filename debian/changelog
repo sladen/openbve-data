@@ -1,8 +1,8 @@
-openbve-data (1.2.5.1+dfsg-0ubuntu1) unreleased; urgency=low
+openbve-data (1.2.5.1+dfsg-0ubuntu1) lucid; urgency=low
 
   * New upstream stable release 1.2.5.1 (2010-02-14)
 
- -- Paul Sladen <ubuntu@paul.sladen.org>  Mon, 15 Feb 2010 14:40:00 +0000
+ -- Paul Sladen <ubuntu@paul.sladen.org>  Mon, 15 Feb 2010 15:40:00 +0000
 
 openbve-data (1.2.3.1+dfsg-0ubuntu1) lucid; urgency=low
 
