@@ -5,7 +5,7 @@ Maintainer: Paul Sladen <ubuntu@paul.sladen.org>
 Build-Depends: debhelper (>= 5)
 Vcs-Browser: http://github.com/sladen/openbve-data/tree/debian
 Vcs-Git: http://github.com/sladen/openbve-data.git
-Standards-Version: 3.8.3
+Standards-Version: 3.8.4
 Homepage: http://openbve.trainsimcentral.co.uk/
 
 Package: openbve-data
@@ -19,6 +19,6 @@ Description: realistic 3D train/railway simulator (GUI icons and data)
  This package contains the icons, keyboard settings, images
  and bootstrap parameters not distributed in the openbve
  source distribution.
- . 
- http://openbve.trainsimcentral.co.uk/
+ .
+ For the program itself, install the 'openbve' package.
 
