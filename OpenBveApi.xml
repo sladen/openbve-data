@@ -1,0 +1,685 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OpenBveApi</name>
+    </assembly>
+    <members>
+        <member name="T:OpenBveApi.Runtime.SoundHandle">
+            <summary>Represents the handle to a sound.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.SoundHandle.MyValid">
+            <summary>Whether the handle to the sound is valid.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.SoundHandle.MyVolume">
+            <summary>The volume. A value of 1.0 represents nominal volume.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.SoundHandle.MyPitch">
+            <summary>The pitch. A value of 1.0 represents nominal pitch.</summary>
+        </member>
+        <member name="M:OpenBveApi.Runtime.SoundHandle.Stop">
+            <summary>Stops the sound and invalidates the handle.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.SoundHandle.Playing">
+            <summary>Gets whether the sound is still playing. Once this returns false, the sound handle is invalid.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.SoundHandle.Stopped">
+            <summary>Gets whether the sound has stopped. Once this returns true, the sound handle is invalid.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.SoundHandle.Volume">
+            <summary>Gets or sets the volume. A value of 1.0 represents nominal volume.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.SoundHandle.Pitch">
+            <summary>Gets or sets the pitch. A value of 1.0 represents nominal pitch.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.PlaySoundDelegate">
+            <summary>Plays a sound.</summary>
+            <param name="index">The index to the sound to be played.</param>
+            <param name="volume">The initial volume of the sound. A value of 1.0 represents nominal volume.</param>
+            <param name="pitch">The initial pitch of the sound. A value of 1.0 represents nominal pitch.</param>
+            <param name="looped">Whether the sound should be played in an indefinate loop.</param>
+            <returns>The handle to the sound, or a null reference if the sound could not be played.</returns>
+            <exception cref="T:System.InvalidOperationException">Raised when the host application does not allow the function to be called.</exception>
+        </member>
+        <member name="T:OpenBveApi.Runtime.AISupport">
+            <summary>Represents to which extent the plugin supports the AI.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.AISupport.None">
+            <summary>The plugin does not support the AI. Calls to PerformAI will not be made. Non-player trains will not use the plugin.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.AISupport.Basic">
+            <summary>The plugin complements the built-in AI by performing only functions specific to the plugin.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.LoadProperties">
+            <summary>Represents properties supplied to the plugin on loading.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.LoadProperties.MyPluginFolder">
+            <summary>The absolute path to the plugin folder.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.LoadProperties.MyTrainFolder">
+            <summary>The absolute path to the train folder.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.LoadProperties.MyPanel">
+            <summary>The array of panel variables.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.LoadProperties.MyPlaySound">
+            <summary>The callback function for playing sounds.</summary>
+            <exception cref="T:System.InvalidOperationException">Raised when the host application does not allow the function to be called.</exception>
+        </member>
+        <member name="F:OpenBveApi.Runtime.LoadProperties.MyAISupport">
+            <summary>The extent to which the plugin supports the AI.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.LoadProperties.MyFailureReason">
+            <summary>The reason why the plugin failed loading.</summary>
+        </member>
+        <member name="M:OpenBveApi.Runtime.LoadProperties.#ctor(System.String,System.String,OpenBveApi.Runtime.PlaySoundDelegate)">
+            <summary>Creates a new instance of this class.</summary>
+            <param name="pluginFolder">The absolute path to the plugin folder.</param>
+            <param name="trainFolder">The absolute path to the train folder.</param>
+            <param name="playSound">The callback function for playing sounds.</param>
+        </member>
+        <member name="P:OpenBveApi.Runtime.LoadProperties.PluginFolder">
+            <summary>Gets the absolute path to the plugin folder.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.LoadProperties.TrainFolder">
+            <summary>Gets the absolute path to the train folder.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.LoadProperties.Panel">
+            <summary>Gets or sets the array of panel variables.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.LoadProperties.PlaySound">
+            <summary>Gets the callback function for playing sounds.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.LoadProperties.AISupport">
+            <summary>Gets or sets the extent to which the plugin supports the AI.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.LoadProperties.FailureReason">
+            <summary>Gets or sets the reason why the plugin failed loading.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.BrakeTypes">
+            <summary>Represents the type of brake the train uses.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.BrakeTypes.ElectromagneticStraightAirBrake">
+            <summary>The train uses the electromagnetic straight air brake. The numerical value of this constant is 0.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.BrakeTypes.ElectricCommandBrake">
+            <summary>The train uses the analog/digital electro-pneumatic air brake without a brake pipe (electric command brake). The numerical value of this constant is 1.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.BrakeTypes.AutomaticAirBrake">
+            <summary>The train uses the automatic air brake with partial release. The numerical value of this constant is 2.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.VehicleSpecs">
+            <summary>Represents the specification of the train.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VehicleSpecs.MyPowerNotches">
+            <summary>The number of power notches the train has.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VehicleSpecs.MyBrakeType">
+            <summary>The type of brake the train uses.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VehicleSpecs.MyHasHoldBrake">
+            <summary>Whether the train has a hold brake.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VehicleSpecs.MyBrakeNotches">
+            <summary>The number of brake notches the train has, including the hold brake, but excluding the emergency brake.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VehicleSpecs.MyCars">
+            <summary>The number of cars the train has.</summary>
+        </member>
+        <member name="M:OpenBveApi.Runtime.VehicleSpecs.#ctor(System.Int32,OpenBveApi.Runtime.BrakeTypes,System.Int32,System.Boolean,System.Int32)">
+            <summary>Creates a new instance of this class.</summary>
+            <param name="powerNotches">The number of power notches the train has.</param>
+            <param name="brakeType">The type of brake the train uses.</param>
+            <param name="brakeNotches">The number of brake notches the train has, including the hold brake, but excluding the emergency brake.</param>
+            <param name="hasHoldBrake">Whether the train has a hold brake.</param>
+            <param name="cars">The number of cars the train has.</param>
+        </member>
+        <member name="P:OpenBveApi.Runtime.VehicleSpecs.PowerNotches">
+            <summary>Gets the number of power notches the train has.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.VehicleSpecs.BrakeType">
+            <summary>Gets the type of brake the train uses.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.VehicleSpecs.BrakeNotches">
+            <summary>Gets the number of brake notches the train has, including the hold brake, but excluding the emergency brake.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.VehicleSpecs.HasHoldBrake">
+            <summary>Gets whether the train has a hold brake.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.VehicleSpecs.AtsNotch">
+            <summary>Gets the index of the brake notch that corresponds to B1 or LAP.</summary>
+            <remarks>For trains without a hold brake, this returns 1. For trains with a hold brake, this returns 2.</remarks>
+        </member>
+        <member name="P:OpenBveApi.Runtime.VehicleSpecs.B67Notch">
+            <summary>Gets the index of the brake notch that corresponds to 70% of the available brake notches.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.VehicleSpecs.Cars">
+            <summary>Gets the number of cars the train has.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.InitializationModes">
+            <summary>Represents the mode in which the plugin should initialize.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.InitializationModes.OnService">
+            <summary>The safety system should be enabled. The train has its service brakes applied. The numerical value of this constant is -1.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.InitializationModes.OnEmergency">
+            <summary>The safety system should be enabled. The train has its emergency brakes applied. The numerical value of this constant is 0.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.InitializationModes.OffEmergency">
+            <summary>The safety system should be disabled. The train has its emergency brakes applied. The numerical value of this constant is 1.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.Speed">
+            <summary>Represents a speed.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.Speed.MyValue">
+            <summary>The speed in meters per second.</summary>
+        </member>
+        <member name="M:OpenBveApi.Runtime.Speed.#ctor(System.Double)">
+            <summary>Creates a new instance of this class.</summary>
+            <param name="value">The speed in meters per second.</param>
+        </member>
+        <member name="P:OpenBveApi.Runtime.Speed.MetersPerSecond">
+            <summary>Gets the speed in meters per second.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.Speed.KilometersPerHour">
+            <summary>Gets the speed in kilometes per hour.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.Speed.MilesPerHour">
+            <summary>Gets the speed in miles per hour.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.Time">
+            <summary>Represents a time.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.Time.MyValue">
+            <summary>The time in seconds.</summary>
+        </member>
+        <member name="M:OpenBveApi.Runtime.Time.#ctor(System.Double)">
+            <summary>Creates a new instance of this class.</summary>
+            <param name="value">The time in seconds.</param>
+        </member>
+        <member name="P:OpenBveApi.Runtime.Time.Seconds">
+            <summary>Gets the time in seconds.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.Time.Milliseconds">
+            <summary>Gets the time in milliseconds.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.VehicleState">
+            <summary>Represents the current state of the train.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VehicleState.MyLocation">
+            <summary>The location of the front of the train, in meters.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VehicleState.MySpeed">
+            <summary>The speed of the train.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VehicleState.MyBcPressure">
+            <summary>The pressure in the brake cylinder, in pascal.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VehicleState.MyMrPressure">
+            <summary>The pressure in the main reservoir, in pascal.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VehicleState.MyErPressure">
+            <summary>The pressure in the emergency reservoir, in pascal.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VehicleState.MyBpPressure">
+            <summary>The pressure in the brake pipe, in pascal.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VehicleState.MySapPressure">
+            <summary>The pressure in the straight air pipe, in pascal.</summary>
+        </member>
+        <member name="M:OpenBveApi.Runtime.VehicleState.#ctor(System.Double,OpenBveApi.Runtime.Speed,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>Creates a new instance of this class.</summary>
+            <param name="location">The location of the front of the train, in meters.</param>
+            <param name="speed">The speed of the train.</param>
+            <param name="bcPressure">The pressure in the brake cylinder, in pascal.</param>
+            <param name="mrPressure">The pressure in the main reservoir, in pascal.</param>
+            <param name="erPressure">The pressure in the emergency reservoir, in pascal.</param>
+            <param name="bpPressure">The pressure in the brake pipe, in pascal.</param>
+            <param name="sapPressure">The pressure in the straight air pipe, in pascal.</param>
+        </member>
+        <member name="P:OpenBveApi.Runtime.VehicleState.Location">
+            <summary>Gets the location of the front of the train, in meters.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.VehicleState.Speed">
+            <summary>Gets the speed of the train.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.VehicleState.BcPressure">
+            <summary>Gets the pressure in the brake cylinder, in pascal.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.VehicleState.MrPressure">
+            <summary>Gets the pressure in the main reservoir, in pascal.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.VehicleState.ErPressure">
+            <summary>Gets the pressure in the emergency reservoir, in pascal.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.VehicleState.BpPressure">
+            <summary>Gets the pressure in the brake pipe, in pascal.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.VehicleState.SapPressure">
+            <summary>Gets the pressure in the straight air pipe, in pascal.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.PrecedingVehicleState">
+            <summary>Represents the current state of the preceding train.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.PrecedingVehicleState.MyLocation">
+            <summary>The location of the back of the preceding train, in meters.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.PrecedingVehicleState.MyDistance">
+            <summary>The distance from the front of the current train to the back of the preceding train, in meters.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.PrecedingVehicleState.MySpeed">
+            <summary>The current speed of the preceding train.</summary>
+        </member>
+        <member name="M:OpenBveApi.Runtime.PrecedingVehicleState.#ctor(System.Double,System.Double,OpenBveApi.Runtime.Speed)">
+            <summary>Creates a new instance of this class.</summary>
+            <param name="location">Gets the location of the back of the preceding train, in meters.</param>
+            <param name="distance">The distance from the front of the current train to the back of the preceding train, in meters.</param>
+            <param name="speed">Gets the speed of the preceding train.</param>
+        </member>
+        <member name="P:OpenBveApi.Runtime.PrecedingVehicleState.Location">
+            <summary>Gets the location of the back of the preceding train, in meters.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.PrecedingVehicleState.Distance">
+            <summary>Gets the distance from the front of the current train to the back of the preceding train, in meters.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.PrecedingVehicleState.Speed">
+            <summary>Gets the speed of the preceding train.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.Handles">
+            <summary>Represents the handles of the cab.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.Handles.MyReverser">
+            <summary>The reverser position.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.Handles.MyPowerNotch">
+            <summary>The power notch.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.Handles.MyBrakeNotch">
+            <summary>The brake notch.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.Handles.MyConstSpeed">
+            <summary>Whether the const speed system is enabled.</summary>
+        </member>
+        <member name="M:OpenBveApi.Runtime.Handles.#ctor(System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>Creates a new instance of this class.</summary>
+            <param name="reverser">The current reverser position.</param>
+            <param name="powerNotch">The current power notch.</param>
+            <param name="brakeNotch">The current brake notch.</param>
+            <param name="constSpeed">Whether the const speed system is enabled.</param>
+        </member>
+        <member name="P:OpenBveApi.Runtime.Handles.Reverser">
+            <summary>Gets or sets the reverser position.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.Handles.PowerNotch">
+            <summary>Gets or sets the power notch.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.Handles.BrakeNotch">
+            <summary>Gets or sets the brake notch.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.Handles.ConstSpeed">
+            <summary>Gets or sets whether the const speed system is enabled.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.ElapseData">
+            <summary>Represents data given to the plugin in the Elapse call.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.ElapseData.MyVehicle">
+            <summary>The state of the train.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.ElapseData.MyPrecedingVehicle">
+            <summary>The state of the preceding train, or a null reference if there is no preceding train.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.ElapseData.MyHandles">
+            <summary>The virtual handles.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.ElapseData.MyTotalTime">
+            <summary>The current absolute time.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.ElapseData.MyElapsedTime">
+            <summary>The elapsed time since the last call to Elapse.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.ElapseData.MyDebugMessage">
+            <summary>The debug message the plugin wants the host application to display.</summary>
+        </member>
+        <member name="M:OpenBveApi.Runtime.ElapseData.#ctor(OpenBveApi.Runtime.VehicleState,OpenBveApi.Runtime.PrecedingVehicleState,OpenBveApi.Runtime.Handles,OpenBveApi.Runtime.Time,OpenBveApi.Runtime.Time)">
+            <summary>Creates a new instance of this class.</summary>
+            <param name="vehicle">The state of the train.</param>
+            <param name="precedingVehicle">The state of the preceding train, or a null reference if there is no preceding train.</param>
+            <param name="handles">The virtual handles.</param>
+            <param name="totalTime">The current absolute time.</param>
+            <param name="elapsedTime">The elapsed time since the last call to Elapse.</param>
+        </member>
+        <member name="P:OpenBveApi.Runtime.ElapseData.Vehicle">
+            <summary>Gets the state of the train.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.ElapseData.PrecedingVehicle">
+            <summary>Gets the state of the preceding train, or a null reference if there is no preceding train.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.ElapseData.Handles">
+            <summary>Gets or sets the virtual handles.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.ElapseData.TotalTime">
+            <summary>Gets the absolute in-game time.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.ElapseData.ElapsedTime">
+            <summary>Gets the time that elapsed since the last call to Elapse.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.ElapseData.DebugMessage">
+            <summary>Gets or sets the debug message the plugin wants the host application to display.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.VirtualKeys">
+            <summary>Represents a virtual key.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VirtualKeys.S">
+            <summary>The virtual S key. The default assignment is Space. The numerical value of this constant is 0.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VirtualKeys.A1">
+            <summary>The virtual A1 key. The default assignment is Insert. The numerical value of this constant is 1.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VirtualKeys.A2">
+            <summary>The virtual A2 key. The default assignment is Delete. The numerical value of this constant is 2.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VirtualKeys.B1">
+            <summary>The virtual B1 key. The default assignment is Home. The numerical value of this constant is 3.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VirtualKeys.B2">
+            <summary>The virtual B2 key. The default assignment is End. The numerical value of this constant is 4.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VirtualKeys.C1">
+            <summary>The virtual C1 key. The default assignment is Page Up. The numerical value of this constant is 5.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VirtualKeys.C2">
+            <summary>The virtual C2 key. The default assignment is Page Down. The numerical value of this constant is 6.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VirtualKeys.D">
+            <summary>The virtual D key. The default assignment is 2. The numerical value of this constant is 7.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VirtualKeys.E">
+            <summary>The virtual E key. The default assignment is 3. The numerical value of this constant is 8.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VirtualKeys.F">
+            <summary>The virtual F key. The default assignment is 4. The numerical value of this constant is 9.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VirtualKeys.G">
+            <summary>The virtual G key. The default assignment is 5. The numerical value of this constant is 10.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VirtualKeys.H">
+            <summary>The virtual H key. The default assignment is 6. The numerical value of this constant is 11.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VirtualKeys.I">
+            <summary>The virtual I key. The default assignment is 7. The numerical value of this constant is 12.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VirtualKeys.J">
+            <summary>The virtual J key. The default assignment is 8. The numerical value of this constant is 13.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VirtualKeys.K">
+            <summary>The virtual K key. The default assignment is 9. The numerical value of this constant is 14.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.VirtualKeys.L">
+            <summary>The virtual L key. The default assignment is 0. The numerical value of this constant is 15.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.HornTypes">
+            <summary>Represents the type of horn.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.HornTypes.Primary">
+            <summary>The primary horn. The numerical value of this constant is 0.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.HornTypes.Secondary">
+            <summary>The secondary horn. The numerical value of this constant is 1.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.HornTypes.Music">
+            <summary>The music horn. The numerical value of this constant is 2.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.DoorStates">
+            <summary>Represents the state of the doors.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.DoorStates.None">
+            <summary>No door is open.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.DoorStates.Left">
+            <summary>The left doors are open.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.DoorStates.Right">
+            <summary>The right doors are open.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.DoorStates.Both">
+            <summary>All doors are open.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.SignalData">
+            <summary>Represents information about a signal or section.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.SignalData.MyAspect">
+            <summary>The aspect of the signal or section.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.SignalData.MyDistance">
+            <summary>The underlying section. Possible values are 0 for the current section, 1 for the upcoming section, or higher values for sections further ahead.</summary>
+        </member>
+        <member name="M:OpenBveApi.Runtime.SignalData.#ctor(System.Int32,System.Double)">
+            <summary>Creates a new instance of this class.</summary>
+            <param name="aspect">The aspect of the signal or section.</param>
+            <param name="distance">The distance to the signal or section.</param>
+        </member>
+        <member name="P:OpenBveApi.Runtime.SignalData.Aspect">
+            <summary>Gets the aspect of the signal or section.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.SignalData.Distance">
+            <summary>Gets the distance to the signal or section.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.BeaconData">
+            <summary>Represents data trasmitted by a beacon.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.BeaconData.MyType">
+            <summary>The type of beacon.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.BeaconData.MyOptional">
+            <summary>Optional data the beacon transmits.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.BeaconData.MySignal">
+            <summary>The section the beacon is attached to.</summary>
+        </member>
+        <member name="M:OpenBveApi.Runtime.BeaconData.#ctor(System.Int32,System.Int32,OpenBveApi.Runtime.SignalData)">
+            <summary>Creates a new instance of this class.</summary>
+            <param name="type">The type of beacon.</param>
+            <param name="optional">Optional data the beacon transmits.</param>
+            <param name="signal">The section the beacon is attached to.</param>
+        </member>
+        <member name="P:OpenBveApi.Runtime.BeaconData.Type">
+            <summary>Gets the type of beacon.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.BeaconData.Optional">
+            <summary>Gets optional data the beacon transmits.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.BeaconData.Signal">
+            <summary>Gets the section the beacon is attached to.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.AIResponse">
+            <summary>Represents responses by the AI.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.AIResponse.None">
+            <summary>No action was performed by the plugin.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.AIResponse.Short">
+            <summary>The action performed took a short time.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.AIResponse.Medium">
+            <summary>The action performed took an average amount of time.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.AIResponse.Long">
+            <summary>The action performed took a long time.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.AIData">
+            <summary>Represents AI data.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.AIData.MyHandles">
+            <summary>The driver handles.</summary>
+        </member>
+        <member name="F:OpenBveApi.Runtime.AIData.MyResponse">
+            <summary>The AI response.</summary>
+        </member>
+        <member name="M:OpenBveApi.Runtime.AIData.#ctor(OpenBveApi.Runtime.Handles)">
+            <summary>Creates a new instance of this class.</summary>
+            <param name="handles">The driver handles.</param>
+        </member>
+        <member name="P:OpenBveApi.Runtime.AIData.Handles">
+            <summary>Gets or sets the driver handles.</summary>
+        </member>
+        <member name="P:OpenBveApi.Runtime.AIData.Response">
+            <summary>Gets or sets the AI response.</summary>
+        </member>
+        <member name="T:OpenBveApi.Runtime.IRuntime">
+            <summary>Represents the interface for performing runtime train services.</summary>
+        </member>
+        <member name="M:OpenBveApi.Runtime.IRuntime.Load(OpenBveApi.Runtime.LoadProperties)">
+            <summary>Is called when the plugin is loaded.</summary>
+            <param name="properties">The properties supplied to the plugin on loading.</param>
+            <returns>Whether the plugin was loaded successfully.</returns>
+            <remarks>If the plugin was not loaded successfully, the plugin should set the Reason property to supply the reason of failure.</remarks>
+        </member>
+        <member name="M:OpenBveApi.Runtime.IRuntime.Unload">
+            <summary>Is called when the plugin is unloaded.</summary>
+        </member>
+        <member name="M:OpenBveApi.Runtime.IRuntime.SetVehicleSpecs(OpenBveApi.Runtime.VehicleSpecs)">
+            <summary>Is called after loading to inform the plugin about the specifications of the train.</summary>
+            <param name="specs">The specifications of the train.</param>
+        </member>
+        <member name="M:OpenBveApi.Runtime.IRuntime.Initialize(OpenBveApi.Runtime.InitializationModes)">
+            <summary>Is called when the plugin should initialize or reinitialize.</summary>
+            <param name="mode">The mode of initialization.</param>
+        </member>
+        <member name="M:OpenBveApi.Runtime.IRuntime.Elapse(OpenBveApi.Runtime.ElapseData)">
+            <summary>Is called every frame.</summary>
+            <param name="data">The data passed to the plugin.</param>
+        </member>
+        <member name="M:OpenBveApi.Runtime.IRuntime.SetReverser(System.Int32)">
+            <summary>Is called when the driver changes the reverser.</summary>
+            <param name="reverser">The new reverser position.</param>
+        </member>
+        <member name="M:OpenBveApi.Runtime.IRuntime.SetPower(System.Int32)">
+            <summary>Is called when the driver changes the power notch.</summary>
+            <param name="powerNotch">The new power notch.</param>
+        </member>
+        <member name="M:OpenBveApi.Runtime.IRuntime.SetBrake(System.Int32)">
+            <summary>Is called when the driver changes the brake notch.</summary>
+            <param name="brakeNotch">The new brake notch.</param>
+        </member>
+        <member name="M:OpenBveApi.Runtime.IRuntime.KeyDown(OpenBveApi.Runtime.VirtualKeys)">
+            <summary>Is called when a virtual key is pressed.</summary>
+            <param name="key">The virtual key that was pressed.</param>
+        </member>
+        <member name="M:OpenBveApi.Runtime.IRuntime.KeyUp(OpenBveApi.Runtime.VirtualKeys)">
+            <summary>Is called when a virtual key is released.</summary>
+            <param name="key">The virtual key that was released.</param>
+        </member>
+        <member name="M:OpenBveApi.Runtime.IRuntime.HornBlow(OpenBveApi.Runtime.HornTypes)">
+            <summary>Is called when a horn is played or when the music horn is stopped.</summary>
+            <param name="type">The type of horn.</param>
+        </member>
+        <member name="M:OpenBveApi.Runtime.IRuntime.DoorChange(OpenBveApi.Runtime.DoorStates,OpenBveApi.Runtime.DoorStates)">
+            <summary>Is called when the state of the doors changes.</summary>
+            <param name="oldState">The old state of the doors.</param>
+            <param name="newState">The new state of the doors.</param>
+        </member>
+        <member name="M:OpenBveApi.Runtime.IRuntime.SetSignal(OpenBveApi.Runtime.SignalData[])">
+            <summary>Is called when the aspect in the current or in any of the upcoming sections changes, or when passing section boundaries.</summary>
+            <param name="data">Signal information per section. In the array, index 0 is the current section, index 1 the upcoming section, and so on.</param>
+            <remarks>The signal array is guaranteed to have at least one element. When accessing elements other than index 0, you must check the bounds of the array first.</remarks>
+        </member>
+        <member name="M:OpenBveApi.Runtime.IRuntime.SetBeacon(OpenBveApi.Runtime.BeaconData)">
+            <summary>Is called when the train passes a beacon.</summary>
+            <param name="data">The beacon data.</param>
+        </member>
+        <member name="M:OpenBveApi.Runtime.IRuntime.PerformAI(OpenBveApi.Runtime.AIData)">
+            <summary>Is called when the plugin should perform the AI.</summary>
+            <param name="data">The AI data.</param>
+        </member>
+        <member name="T:OpenBveApi.Sound.Sound">
+            <summary>Represents a sound.</summary>
+        </member>
+        <member name="F:OpenBveApi.Sound.Sound.MySampleRate">
+            <summary>The number of samples per second.</summary>
+        </member>
+        <member name="F:OpenBveApi.Sound.Sound.MyBitsPerSample">
+            <summary>The number of bits per sample. Allowed values are 8 or 16.</summary>
+        </member>
+        <member name="F:OpenBveApi.Sound.Sound.MyBytes">
+            <summary>The PCM sound data per channel. For 8 bits per sample, samples are unsigned from 0 to 255. For 16 bits per sample, samples are signed from -32768 to 32767 and in little endian byte order.</summary>
+        </member>
+        <member name="M:OpenBveApi.Sound.Sound.#ctor(System.Int32,System.Int32,System.Byte[][])">
+            <summary>Creates a new instance of this class.</summary>
+            <param name="sampleRate">The number of samples per second.</param>
+            <param name="bitsPerSample">The number of bits per sample. Allowed values are 8 or 16.</param>
+            <param name="bytes">The PCM sound data per channel. For 8 bits per sample, samples are unsigned from 0 to 255. For 16 bits per sample, samples are signed from -32768 to 32767 and in little endian byte order.</param>
+            <exception cref="T:System.ArgumentException">Raised when the bits per samples are neither 8 nor 16.</exception>
+        </member>
+        <member name="P:OpenBveApi.Sound.Sound.SampleRate">
+            <summary>Gets the number of samples per second.</summary>
+        </member>
+        <member name="P:OpenBveApi.Sound.Sound.BitsPerSample">
+            <summary>Gets the number of bits per sample. Allowed values are 8 or 16.</summary>
+        </member>
+        <member name="P:OpenBveApi.Sound.Sound.Bytes">
+            <summary>Gets the PCM sound data per channel. For 8 bits per sample, samples are unsigned from 0 to 255. For 16 bits per sample, samples are signed from -32768 to 32767 and in little endian byte order.</summary>
+        </member>
+        <member name="T:OpenBveApi.Sound.ISound">
+            <summary>Represents the interface for loading sounds.</summary>
+        </member>
+        <member name="M:OpenBveApi.Sound.ISound.CanLoadSound(System.String,System.String)">
+            <summary>Is called to check whether the plugin can load the specified sound.</summary>
+            <param name="file">The file to the sound.</param>
+            <param name="optional">Additional information that describes how to process the file, or a null reference.</param>
+            <returns>Whether the plugin can load the specified sound.</returns>
+            <remarks>The plugin should only inspect file extensions, identifiers or headers. It should not perform a full file validation.</remarks>
+        </member>
+        <member name="M:OpenBveApi.Sound.ISound.LoadSound(System.String,System.String,OpenBveApi.Sound.Sound@)">
+            <summary>Is called to let the plugin load the specified sound.</summary>
+            <param name="file">The file to the sound.</param>
+            <param name="optional">Additional information that describes how to process the file, or a null reference.</param>
+            <param name="sound">Receives the sound on success.</param>
+            <returns>Whether the plugin succeeded in loading the sound.</returns>
+        </member>
+        <member name="T:OpenBveApi.Texture.Texture">
+            <summary>Represents a texture.</summary>
+        </member>
+        <member name="F:OpenBveApi.Texture.Texture.MyWidth">
+            <summary>The width of the texture in pixels.</summary>
+        </member>
+        <member name="F:OpenBveApi.Texture.Texture.MyHeight">
+            <summary>The height of the texture in pixels.</summary>
+        </member>
+        <member name="F:OpenBveApi.Texture.Texture.MyBytes">
+            <summary>The RGBA texture data. Pixels are stored row-based from top to bottom, and within a row from left to right. All pixels take four bytes in the order red, green, blue, alpha.</summary>
+        </member>
+        <member name="M:OpenBveApi.Texture.Texture.#ctor(System.Int32,System.Int32,System.Byte[])">
+            <summary>Creates a new instance of this class.</summary>
+            <param name="width">The width of the texture in pixels.</param>
+            <param name="height">The height of the texture in pixels.</param>
+            <param name="bytes">The RGBA texture data. Pixels are stored row-based from top to bottom, and within a row from left to right. All pixels take four bytes in the order red, green, blue, alpha.</param>
+            <exception cref="T:System.ArgumentNullException">Raised when the byte array is a null reference.</exception>
+            <exception cref="T:System.ArgumentException">Raised when the length of the byte array is not 4 * width * height.</exception>
+        </member>
+        <member name="P:OpenBveApi.Texture.Texture.Width">
+            <summary>Gets the width of the texture in pixels.</summary>
+        </member>
+        <member name="P:OpenBveApi.Texture.Texture.Height">
+            <summary>Gets the height of the texture in pixels.</summary>
+        </member>
+        <member name="P:OpenBveApi.Texture.Texture.Bytes">
+            <summary>Gets the RGBA texture data. Pixels are stored row-based from top to bottom, and within a row from left to right. All pixels take four bytes in the order red, green, blue, alpha.</summary>
+        </member>
+        <member name="T:OpenBveApi.Texture.ITexture">
+            <summary>Represents the interface for loading textures.</summary>
+        </member>
+        <member name="M:OpenBveApi.Texture.ITexture.CanLoadTexture(System.String,System.String)">
+            <summary>Is called to check whether the plugin can load the specified texture.</summary>
+            <param name="file">The file to the texture.</param>
+            <param name="optional">Additional information that describes how to process the file, or a null reference.</param>
+            <returns>Whether the plugin can load the specified texture.</returns>
+            <remarks>The plugin should only inspect file extensions, identifiers or headers. It should not perform a full file validation.</remarks>
+        </member>
+        <member name="M:OpenBveApi.Texture.ITexture.LoadTexture(System.String,System.String,OpenBveApi.Texture.Texture@)">
+            <summary>Is called to let the plugin load the specified texture.</summary>
+            <param name="file">The file to the texture.</param>
+            <param name="optional">Additional information that describes how to process the file, or a null reference.</param>
+            <param name="texture">Receives the texture on success.</param>
+            <returns>Whether the plugin succeeded in loading the texture.</returns>
+        </member>
+    </members>
+</doc>
