@@ -5,7 +5,7 @@ Maintainer: Paul Sladen <ubuntu@paul.sladen.org>
 Build-Depends: debhelper (>= 5)
 Vcs-Browser: http://github.com/sladen/openbve-data/tree/debian
 Vcs-Git: http://github.com/sladen/openbve-data.git
-Standards-Version: 3.8.4
+Standards-Version: 3.9.1
 Homepage: http://openbve.trainsimcentral.co.uk/
 
 Package: openbve-data
