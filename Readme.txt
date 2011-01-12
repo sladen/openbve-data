@@ -24,6 +24,9 @@ Loads the specified route (CSV/RW) on startup. If /train is not also specified, 
 /train=FOLDER
 Loads the specified train folder (containing a train.dat) on startup. If /route is not also specified, the main menu will be opened with just the train selected.
 
+/filesystem=FILE
+The specified file describes the file system organization. See the Using openBVE pages on the homepage for the details.
+
 
 -----
 Links

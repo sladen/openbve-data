@@ -4,6 +4,31 @@
         <name>OpenBveApi</name>
     </assembly>
     <members>
+        <member name="T:OpenBveApi.Path">
+            <summary>Provides path-related functions for accessing files and directories in a cross-platform manner.</summary>
+        </member>
+        <member name="F:OpenBveApi.Path.InvalidPathChars">
+            <summary>The list of characters that are invalid in a platform-independent relative path.</summary>
+        </member>
+        <member name="M:OpenBveApi.Path.CombineDirectory(System.String,System.String)">
+            <summary>Combines a platform-specific absolute path with a platform-independent relative path that points to a directory.</summary>
+            <param name="absolute">The platform-specific absolute path.</param>
+            <param name="relative">The platform-independent relative path.</param>
+            <returns>A platform-specific absolute path to the specified directory.</returns>
+            <exception cref="T:System.Exception">Raised when combining the paths failed, for example due to malformed paths, due to unauthorized access, or when the specified directory could not be found.</exception>
+        </member>
+        <member name="M:OpenBveApi.Path.CombineFile(System.String,System.String)">
+            <summary>Combines a platform-specific absolute path with a platform-independent relative path that points to a file.</summary>
+            <param name="absolute">The platform-specific absolute path.</param>
+            <param name="relative">The platform-independent relative path.</param>
+            <returns>Whether the operation succeeded and the specified file was found.</returns>
+            <exception cref="T:System.Exception">Raised when combining the paths failed, for example due to malformed paths, due to unauthorized access, or when the specified file could not be found.</exception>
+        </member>
+        <member name="M:OpenBveApi.Path.IsAllPeriods(System.String)">
+            <summary>Checks whether the specified string consists only of periods.</summary>
+            <param name="text">The string to check.</param>
+            <returns>Whether the string consists only of periods.</returns>
+        </member>
         <member name="T:OpenBveApi.Runtime.SoundHandle">
             <summary>Represents the handle to a sound.</summary>
         </member>
@@ -607,7 +632,9 @@
             <param name="sampleRate">The number of samples per second.</param>
             <param name="bitsPerSample">The number of bits per sample. Allowed values are 8 or 16.</param>
             <param name="bytes">The PCM sound data per channel. For 8 bits per sample, samples are unsigned from 0 to 255. For 16 bits per sample, samples are signed from -32768 to 32767 and in little endian byte order.</param>
-            <exception cref="T:System.ArgumentException">Raised when the bits per samples are neither 8 nor 16.</exception>
+            <exception cref="T:System.ArgumentNullException">Raised when the bytes array or any of its subarrays is a null reference.</exception>
+            <exception cref="T:System.ArgumentException">Raised when the bytes' subarrays are of unequal length.</exception>
+            <exception cref="T:System.ArgumentException">Raised when the number of bits per samples is neither 8 nor 16.</exception>
         </member>
         <member name="P:OpenBveApi.Sound.Sound.SampleRate">
             <summary>Gets the number of samples per second.</summary>
