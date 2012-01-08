@@ -1,15 +1,4 @@
 usr/share/doc/openbve-data/
-usr/share/games/openbve/data/
-usr/share/games/openbve/data/Interface/
-usr/share/games/openbve/data/Controls/
-usr/share/games/openbve/data/Graphics/
-usr/share/games/openbve/data/Compatibility/
-usr/share/games/openbve/data/Compatibility/limits
-usr/share/games/openbve/data/Compatibility/limits/graphics
-usr/share/games/openbve/data/Compatibility/pretrain
-usr/share/games/openbve/data/Compatibility/transponder
-usr/share/games/openbve/data/Compatibility/poles
-usr/share/games/openbve/data/Compatibility/signals
-usr/share/games/openbve/data/Compatibility/signals/graphics
+usr/share/games/openbve/Data/
 usr/share/pixmaps
 usr/lib/openbve

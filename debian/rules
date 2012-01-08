@@ -27,6 +27,8 @@ install: build
 	dh_installdirs
 	cp -rp $(CURDIR)/Data $(DATATARGET)/
 	(cd $(TARGET)/usr/share/pixmaps/ && ln -s ../games/openbve/Data/Menu/logo.png openbve.128.png)
+	# This package is contextual data, not plugin-executables
+	rmdir $(DATATARGET)/Data/Plugins
 
 binary-arch:
 	# Do nothing
