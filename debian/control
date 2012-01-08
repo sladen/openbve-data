@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 5)
 Vcs-Browser: http://github.com/sladen/openbve-data/tree/debian
 Vcs-Git: http://github.com/sladen/openbve-data.git
 Standards-Version: 3.9.1
-Homepage: http://openbve.trainsimcentral.co.uk/
+Homepage: http://trainsimframework.org/
 
 Package: openbve-data
 Architecture: all
