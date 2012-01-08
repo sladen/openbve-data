@@ -1,0 +1,55 @@
+﻿=================
+openBVE - Credits
+=================
+
+This is a list of credits intended to include everyone who made significant contributions to this project.
+
+
+
+-----------
+Programming
+-----------
+
+michelle - Lead programming
+
+Anthony Bowden (Anthony_B) - Additional programming, feedback and testing
+
+Jens Rügenhagen (odakyufan) - Additional programming, feedback and testing
+
+
+
+--------
+Homepage
+--------
+
+michelle - Homepage content
+
+Anthony Bowden (Anthony_B) - Current hosting solution
+
+Steve Green (wumpty) - Former hosting solution
+
+
+
+---------
+Packagers
+---------
+
+Paul Sladen (sladen) - Ubuntu package maintainer, portability improvements
+
+
+
+-----------
+Translators
+-----------
+
+Marc Riera Irigoyen (Markitus95) - Catalan
+
+Jan Henning (Jan) - German
+
+phontanka - Hungarian
+
+Dirk-Jan Breunissen (DJB) - Dutch
+
+黃皓俊 Alvin Wong (alvinwong) - Chinese (Simplified)
+
+and others...

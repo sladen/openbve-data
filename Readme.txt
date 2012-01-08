@@ -9,7 +9,7 @@ Getting started
 
 If you have problems getting openBVE to run, make sure that you have read the installation instructions located at:
 
-http://openbve.trainsimcentral.co.uk/use/index.html
+http://trainsimframework.org/use/index.html
 
 These pages also include driving guides, an overview of the default keyboard assignment, as well as a troubleshooting section.
 
@@ -24,13 +24,16 @@ Loads the specified route (CSV/RW) on startup. If /train is not also specified, 
 /train=FOLDER
 Loads the specified train folder (containing a train.dat) on startup. If /route is not also specified, the main menu will be opened with just the train selected.
 
+/filesystem=FILE
+The specified file describes the file system organization. See the Install and Play pages on the homepage for the details.
+
 
 -----
 Links
 -----
 
 Official homepage:
-http://openbve.trainsimcentral.co.uk/
+http://trainsimframework.org/
 
 Official discussion board:
 http://openbve.freeforums.org/
