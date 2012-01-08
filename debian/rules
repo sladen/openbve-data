@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 export DH_VERBOSE=15
 TARGET = $(CURDIR)/debian/openbve-data
-DATATARGET=$(TARGET)/usr/share/games/openbve/
+DATATARGET=$(TARGET)/usr/share/games/openbve
 
 configure: configure-stamp
 configure-stamp:
@@ -28,7 +28,7 @@ install: build
 	cp -rp $(CURDIR)/Data $(DATATARGET)/
 	(cd $(TARGET)/usr/share/pixmaps/ && ln -s ../games/openbve/Data/Menu/logo.png openbve.128.png)
 	# This package is contextual data, not plugin-executables
-	rmdir $(DATATARGET)/Data/Plugins
+	-rmdir $(DATATARGET)/Data/Plugins
 
 binary-arch:
 	# Do nothing
