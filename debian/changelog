@@ -1,3 +1,9 @@
+openbve-data (1.4.0.0+dfsg-0ubuntu1) UNRELEASED; urgency=low
+
+  * New upstream stable release 1.4.0.0 (2012-01-08)
+
+ -- Paul Sladen <sladen@ubuntu.com>  Sun, 08 Jan 2012 12:00:00 +0100
+
 openbve-data (1.2.10.0+dfsg-0ubuntu1) natty; urgency=low
 
   * New upstream stable release 1.2.10.0 (2010-12-19)
